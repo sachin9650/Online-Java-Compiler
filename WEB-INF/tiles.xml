@@ -1,0 +1,63 @@
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+
+<tiles-definitions>
+	<definition name="home" template="/layout.jsp">
+		<put-attribute name="title" value="Online Java Compiler" type="string" />
+		<put-attribute name="header" value="/Views/carousel.html" />
+		<put-attribute name="menu" value="/Views/menu.html" />
+		<put-attribute name="body" value="/Views/login_form.jsp" />
+		<put-attribute name="footer" value="/Views/footer.html" />
+	</definition>
+	
+	<definition name="reg" extends="home">   
+      <put-attribute name="body"  value="/Views/registration_form.jsp"/>
+	</definition>    
+	
+	<definition name="reg_success" extends="home">   
+      <put-attribute name="body"  value="/Views/reg_succ.jsp"/>
+	</definition>
+	
+	<definition name="login" extends="home">   
+      <put-attribute name="body"  value="/Views/login_form.jsp"/>
+	</definition>        
+	
+	<definition name="login_success" extends="home">	
+	  <put-attribute name="menu" value="/Views/mainmenu.jsp" />
+      <put-attribute name="body"  value="/Views/introduction.jsp"/>
+	</definition>
+
+	<definition name="help" extends="home">   
+      <put-attribute name="body"  value="/Views/questions.jsp"/>
+	</definition>
+	
+	<definition name="code_gen" extends="login_success">   
+      <put-attribute name="body"  value="/Views/codegenerator_form.jsp"/>
+	</definition>
+	
+	<definition name="codegeneration_success" extends="login_success">   
+      <put-attribute name="body"  value="/Views/codegenerator_success.jsp"/>
+	</definition>
+	
+	<definition name="login_help" extends="login_success">   
+      <put-attribute name="body"  value="/Views/questions.jsp"/>
+	</definition>
+	
+	<definition name="encryption_page" extends="login_success">
+		<put-attribute name="body" value="/Views/encryption.jsp" />
+	</definition>
+	
+	<definition name="encryption_success" extends="login_success">
+		<put-attribute name="body" value="/Views/encryption_success.jsp" />
+	</definition>
+	
+	<definition name="decryption_success" extends="login_success">
+		<put-attribute name="body" value="/Views/decryption_success.jsp" />
+	</definition>
+	
+	<definition name="saveInFileSuccess" extends="login_success">
+		<put-attribute name="body" value="/Views/savedSuccessfully.jsp" />
+	</definition>
+
+</tiles-definitions>

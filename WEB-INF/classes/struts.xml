@@ -1,0 +1,46 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd ">
+
+<struts>
+	<package name="views" namespace="/Views" extends="struts-default">
+		<result-types>
+			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+		
+		<action name="reg_action" class="my.RegistrationAction">
+			<result name="success" type="tiles">reg_success</result>
+			<result name="input" type="tiles">reg</result>
+		</action>
+		
+		<action name="login_action" class="my.LoginAction">
+			<result name="success" type="tiles">login_success</result>
+			<result name="input" type="tiles">login</result>
+		</action>
+		
+		<action name="code_generator" class="my.CodeGenerationAction">
+			<result name="success" type="tiles">codegeneration_success</result>
+		</action>
+		
+		<action name="encrypt_gencode" class="my.EncryptCodeAction">
+			<result name="success" type="tiles">encryption_page</result>
+		</action>
+		
+		<action name="actual_encryption" class="my.ActualEncryptionAction" method="encrypt">
+			<result name="success" type="tiles">encryption_success</result>
+		</action>
+		
+		<action name="actual_decryption" class="my.ActualEncryptionAction" method="decrypt">
+			<result name="success" type="tiles">decryption_success</result>
+		</action>
+		
+		<action name="save_encryptedCode" class="my.SaveInFileAction" method="saveEncryptedFile">
+			<result name="success" type="tiles">saveInFileSuccess</result>
+		</action>
+		
+		<action name="save_decryptedCode" class="my.SaveInFileAction" method="saveDecryptedFile">
+			<result name="success" type="tiles">saveInFileSuccess</result>
+		</action>
+		
+	</package>
+</struts>
